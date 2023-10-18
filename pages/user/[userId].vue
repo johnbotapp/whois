@@ -91,7 +91,7 @@
       twitterDescription:  `Username: ${data.value.user.username}`
         + `\nID: ${data.value.user.id}`
         + `\nCreated at: ${new Date(getTimestamp(data.value.user.id)).toLocaleString('en-US', { timeZone: 'UTC' })} (UTC)`
-        + `\nThis user is ${data.value.user.bot ? null : 'not'} a bot`,
+        + `\nThis user is ${data.value.user.bot ? '' : 'not'} a bot`,
         themeColor: data.value.user.banner_color ?? '#2b2d31',
     });
   }
