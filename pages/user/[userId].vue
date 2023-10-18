@@ -67,6 +67,11 @@
     return snowflake / 4194304 + 1420070400000;
   }
 
+  const defaultAvatarURL = function(user) {
+    const index = parseInt(user.discriminator === '0' ? user.id / 1000 : user.discriminator) % 5;
+    return `https://cdn.discordapp.com/embed/avatars/${index}.png`;
+  }
+
   const route = useRoute();
   const userIdRoute = ref(route.params.userId);
 
@@ -74,7 +79,6 @@
   
   if (data?.value?.user) {
     const username = data.value.user.discriminator === "0" ? `@${data.value.user.username}` : `${data.value.user.username}#${data.value.user.discriminator}`;
-
     useSeoMeta({
       title: `Whois / John-Bot - ${username}`,
       description: `Username: ${data.value.user.username}`
@@ -82,12 +86,12 @@
         + `\nCreated at: ${new Date(getTimestamp(data.value.user.id)).toLocaleString('en-US', { timeZone: 'UTC' })} (UTC)`
         + `\nThis user is ${data.value.user.bot ? '' : 'not'} a bot`,
       twitterTitle: `Whois / John-Bot - ${username}`,
-      twitterImage: `https://cdn.discordapp.com/avatars/${data.value.user.id}/${data.value.user.avatar}`,
-      twitterCard: `summary`,
+      twitterImage: data.value.user.avatar ? `https://cdn.discordapp.com/avatars/${data.value.user.id}/${data.value.user.avatar}` : defaultAvatarURL(data.value.user),
+      twitterCard: "summary",
       twitterDescription:  `Username: ${data.value.user.username}`
         + `\nID: ${data.value.user.id}`
         + `\nCreated at: ${new Date(getTimestamp(data.value.user.id)).toLocaleString('en-US', { timeZone: 'UTC' })} (UTC)`
-        + `\nThis user is ${data.value.user.bot ? '' : 'not'} a bot`,
+        + `\nThis user is ${data.value.user.bot ? null : 'not'} a bot`,
         themeColor: data.value.user.banner_color ?? '#2b2d31',
     });
   }
