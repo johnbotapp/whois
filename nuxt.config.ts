@@ -18,6 +18,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-time',
     'nuxt-simple-robots',
+    'nuxt-simple-sitemap',
     '@nuxtjs/i18n',
   ],
   i18n: {
@@ -37,6 +38,7 @@ export default defineNuxtConfig({
       '/api/**',
       '/user/**',
     ],
+    sitemap: 'https://whois.johnbot.app/sitemap.xml',
   },
   pages: true,
   colorMode: {
