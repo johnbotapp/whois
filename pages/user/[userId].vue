@@ -15,7 +15,10 @@
       <UserCardSkeleton
         v-if="!error && !data?.user"
       />
-      <div class="flex flex-col sm:flex-row gap-2 w-full" v-if="!error && data?.user">
+      <div
+        class="flex flex-col sm:flex-row gap-2 w-full"
+        v-if="!error && data?.user"
+      >
         <a
           v-if="!error"
           :href="`https://discord.com/users/${userIdRoute}`"
