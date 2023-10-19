@@ -38,7 +38,6 @@ export default defineNuxtConfig({
       '/api/**',
       '/user/**',
     ],
-    sitemap: 'https://whois.johnbot.app/sitemap.xml',
   },
   pages: true,
   colorMode: {
