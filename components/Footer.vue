@@ -1,24 +1,22 @@
 <template>
   <div>
-    <footer
-      class="flex flex-wrap justify-center items-center text-black dark:text-white text-sm gap-2 p-2"
-    >
+    <footer class="flex flex-wrap justify-center items-center text-black dark:text-white text-sm gap-2 p-2">
       <a
         href="https://github.com/johnbotapp/whois"
         target="_blank"
         class="hover:underline"
       >
-        Source
+        {{ $t('footer.source') }}
       </a>
       <div class="h-1 w-1 bg-black dark:bg-white rounded-full"></div>
       <span>
-        Made with <a 
+        {{ $t('footer.madeWith') }} <a 
           href="https://en.wikipedia.org/wiki/Heart"
           target="_blank"
         >
           ❤️
         </a>
-        by <a 
+        {{ $t('footer.by') }} <a 
           href="https://johnbot.app"
           target="_blank"
           class="hover:underline font-semibold"
@@ -27,7 +25,7 @@
         </a>
       </span>
       <div class="h-1 w-1 bg-black dark:bg-white rounded-full"></div>
-      Not affiliated with Discord, Inc.
+      {{ $t('footer.disclaimer') }}
     </footer>
   </div>
 </template>

@@ -18,7 +18,15 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     'nuxt-time',
     'nuxt-simple-robots',
+    '@nuxtjs/i18n',
   ],
+  i18n: {
+    locales: [
+      'en',
+      'fr'
+    ],
+    defaultLocale: 'en',
+  },
   runtimeConfig: {
     discord: {
       bot_token: process.env.NUXT_DISCORD_BOT_TOKEN,
@@ -27,9 +35,7 @@ export default defineNuxtConfig({
   robots: {
     disallow: [
       '/api/**',
-      '/u/**',
       '/user/**',
-      '/users/**',
     ],
   },
   pages: true,
@@ -78,11 +84,6 @@ export default defineNuxtConfig({
           rel: 'manifest',
           href: '/site.webmanifest'
       }]
-    }
-  },
-  $production: {
-    routeRules: {
-      '/**': { isr: true },
     }
   },
 })

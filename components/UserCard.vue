@@ -22,16 +22,14 @@
           :rounded="true"
         />
       </div>
-      <div
-        class="flex flex-col justify-center gap-4 overflow-hidden w-full"
-      >
+      <div class="flex flex-col justify-center gap-4 overflow-hidden w-full">
         <div class="flex flex-col gap-0">
           <div class="flex gap-2 items-center truncate">
             <span class="truncate">{{ data.user.global_name ?? data.user.username }}</span>
             <span
               v-if="data.user.bot"
               class="flex bg-[#5865f2] rounded-[3px] px-1 h-4 leading-none text-[11px] text-white uppercase aling-center items-center font-semibold tracking-wider"
-              :title="(data.user.verified_bot || data.user.system) ? 'Verified Bot' : 'Bot'"
+              :title="(data.user.verified_bot || data.user.system) ? flagsName[locale]['VerifiedBot'] : 'Bot'"
             >
               <svg
                 v-if="data.user.verified_bot || data.user.system"
@@ -46,7 +44,7 @@
                 />
               </svg>
               <span v-if="data.user.bot && !data.user.system">Bot</span>
-              <span v-if="data.user.system">System</span>
+              <span v-if="data.user.system">{{ $t('user.system') }}</span>
             </span>
           </div>
           <span class="opacity-75 truncate">
@@ -55,12 +53,10 @@
         </div>
       </div>
     </div>
-    <div
-      class="flex flex-col justify-between items-start sm:items-end gap-3 sm:gap-0 w-full"
-    >
+    <div class="flex flex-col justify-between items-start sm:items-end gap-3 sm:gap-0 w-full">
       <div class="flex flex-col items-start sm:items-end gap-2 sm:gap-0 leading-none sm:leading-6">
-        <div class="flex">
-          <span class="opacity-75">Created:&nbsp;</span>
+        <div class="flex w-[max-content]">
+          <span class="opacity-75">{{ $t('user.created') }}&nbsp;</span>
           <NuxtTime
             :datetime="getTimestamp(data.user.id)"
             second="numeric"
@@ -69,11 +65,11 @@
             hour="numeric"
             minute="numeric"
             year="numeric"
-            class="text-black dark:text-white h-fit text-right w-[max-content]"
+            class="text-black dark:text-white h-fit"
           />
         </div>
-        <div>
-          <span class="opacity-75">ID:&nbsp;</span>
+        <div class="w-[max-content]">
+          <span class="opacity-75">{{ $t('user.id') }}&nbsp;</span>
           <span>{{ data.user.id }}</span>
         </div>
       </div>
@@ -82,7 +78,7 @@
           v-for="flag in data.user.user_flags"
           :key="flag"
           class="relative group h-fit"
-          :title="flagsName[flag]"
+          :title="flagsName[locale][flag]"
         >
           <img :src="`/img/icons/${flag}.svg`" class="h-5 max-w-[24px]" />
         </div>
@@ -92,6 +88,7 @@
 </template>
 
 <script setup>
+  const { locale } = useI18n();
   import flagsName from '~/utils/flagsName.json';
 
   defineProps({

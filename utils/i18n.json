@@ -1,0 +1,68 @@
+{
+  "en": {
+    "index": {
+      "description": "A simple Discord users lookup tool.",
+      "input": {
+        "placeholder": "User ID (e.g. 958547309728256081)"
+      },
+      "cta": {
+        "search": "Lookup"
+      }
+    },
+    "user": {
+      "error": {
+        "title": "Error",
+        "description": "Oops! That user ID doesn't seem to be valid."
+      },
+      "cta": {
+        "view": "View on Discord",
+        "invite": "Invite this bot"
+      },
+      "system": "System",
+      "created": "Created at:",
+      "id": "ID:"
+    },
+    "navbar": {
+      "home": "Home"
+    },
+    "footer": {
+      "source": "Source code",
+      "madeWith": "Made with",
+      "by": "by",
+      "disclaimer": "Not affiliated with Discord, Inc."
+    }
+  },
+  "fr": {
+    "index": {
+      "description": "Un outil de recherche d'utilisateurs Discord.",
+      "input": {
+        "placeholder": "Identifiant de l'utilisateur (ex. 958547309728256081)"
+      },
+      "cta": {
+        "search": "Rechercher"
+      }
+    },
+    "user": {
+      "error": {
+        "title": "Erreur",
+        "description": "Oups ! Cet identifiant d'utilisateur ne semble pas être valide."
+      },
+      "cta": {
+        "view": "Voir sur Discord",
+        "invite": "Ajouter ce robot"
+      },
+      "system": "Système",
+      "created": "Créé le :",
+      "id": "Identifiant :"
+    },
+    "navbar": {
+      "home": "Accueil"
+    },
+    "footer": {
+      "source": "Code source",
+      "madeWith": "Fait avec",
+      "by": "par",
+      "disclaimer": "Non affilié à Discord, Inc."
+    }
+  }
+}

@@ -1,15 +1,32 @@
 {
-  "DiscordStaff": "Discord Staff",
-  "PartneredServerOwner": "Partnered Server Owner",
-  "HypesquadEvents": "HypeSquad Events",
-  "BugHunter": "Discord Bug Hunter",
-  "HypesquadHouseOfBravery": "HypeSquad Bravery",
-  "HypesquadHouseOfBrilliance": "HypeSquad Brilliance",
-  "HypesquadHouseOfBalance": "HypeSquad Balance",
-  "EarlySupporter": "Early Supporter",
-  "BugHunterGolden": "Discord Bug Hunter",
-  "VerifiedBot": "Verified Bot",
-  "EarlyVerifiedBotDeveloper": "Early Verified Bot Developer",
-  "ModeratorProgramsAlumni": "Moderator Programs Alumni",
-  "ActiveDeveloper": "Active Developer"
+  "en": {
+    "DiscordStaff": "Discord Staff",
+    "PartneredServerOwner": "Partnered Server Owner",
+    "HypesquadEvents": "HypeSquad Events",
+    "BugHunter": "Discord Bug Hunter",
+    "HypesquadHouseOfBravery": "HypeSquad Bravery",
+    "HypesquadHouseOfBrilliance": "HypeSquad Brilliance",
+    "HypesquadHouseOfBalance": "HypeSquad Balance",
+    "EarlySupporter": "Early Supporter",
+    "BugHunterGolden": "Discord Bug Hunter",
+    "VerifiedBot": "Verified Bot",
+    "EarlyVerifiedBotDeveloper": "Early Verified Bot Developer",
+    "ModeratorProgramsAlumni": "Moderator Programs Alumni",
+    "ActiveDeveloper": "Active Developer"
+  },
+  "fr": {
+    "DiscordStaff": "Équipe Discord",
+    "PartneredServerOwner": "Propritaire d'un serveur partenaire",
+    "HypesquadEvents": "Événements HypeSquad",
+    "BugHunter": "Discord Bug Hunter",
+    "HypesquadHouseOfBravery": "HypeSquad Bravery",
+    "HypesquadHouseOfBrilliance": "HypeSquad Brilliance",
+    "HypesquadHouseOfBalance": "HypeSquad Balance",
+    "EarlySupporter": "Soutien de la première heure",
+    "BugHunterGolden": "Discord Bug Hunter",
+    "VerifiedBot": "Bot certifié",
+    "EarlyVerifiedBotDeveloper": "Développeur de bot certifié de la première heure",
+    "ModeratorProgramsAlumni": "Anciens des programmes de modération",
+    "ActiveDeveloper": "Développeur actif"
+  }
 }
