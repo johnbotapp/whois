@@ -13,7 +13,7 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "autoprefixer": "^10.4.16",
-    "nuxt": "^3.8.0",
+    "nuxt": "^3.8.1",
     "nuxt-lego": "^0.0.14",
     "nuxt-simple-sitemap": "^3.4.0",
     "nuxt-time": "^0.1.1",
