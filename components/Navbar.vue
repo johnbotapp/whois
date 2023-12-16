@@ -1,17 +1,17 @@
 <template>
-  <div class="flex justify-between items-center w-full">
+  <div class="flex w-full items-center justify-between">
     <NuxtLink
       :to="localePath('/')"
-      class="opacity-0 flex justify-center items-start text-black dark:text-white gap-2 px-3 py-2 w-fit pointer-events-none transition duration-150 ease-in-out hover:opacity-100"
-      :class="{ 'opacity-75 pointer-events-auto': $route.path !== localePath('/') }"
+      class="pointer-events-none flex w-fit items-start justify-center gap-2 px-3 py-2 text-black opacity-0 transition duration-150 ease-in-out hover:opacity-100 dark:text-white"
+      :class="{ 'pointer-events-auto opacity-75': $route.path !== localePath('/') }"
     >
       {{ $t('navbar.home') }}
     </NuxtLink>
-    <div class="opacity-75 flex justify-center items-start text-black dark:text-white gap-2 px-3 py-2 w-fit transition duration-150 ease-in-out hover:opacity-100">
+    <div class="flex w-fit items-start justify-center gap-2 px-3 py-2 text-black opacity-75 transition duration-150 ease-in-out hover:opacity-100 dark:text-white">
       <NuxtLink
         @click="locale = 'fr'"
         :to="switchLocalePath('fr')"
-        class="text-black dark:text-white hover:underline"
+        class="text-black hover:underline dark:text-white"
         :class="{ 'pointer-events-none opacity-50': locale === 'fr' }"
       >
         FR
@@ -20,7 +20,7 @@
       <NuxtLink
         @click="locale = 'en'"
         :to="switchLocalePath('en')"
-        class="text-black dark:text-white hover:underline"
+        class="text-black hover:underline dark:text-white"
         :class="{ 'pointer-events-none opacity-50': locale === 'en' }"
       >
         EN

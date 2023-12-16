@@ -1,20 +1,20 @@
 <template>
-  <div class="h-full w-full flex justify-center items-center">
-    <div class="flex flex-col justify-center items-start gap-4 max-w-xl w-full p-4">
-      <h1 class="text-4xl font-bold text-center text-black dark:text-white leading-none">Whois</h1>
-      <p class="text-left text-black dark:text-white leading-none">{{ $t('index.description') }}</p>
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-2 w-full">
+  <div class="flex h-full w-full items-center justify-center">
+    <div class="flex w-full max-w-xl flex-col items-start justify-center gap-4 p-4">
+      <h1 class="text-center text-4xl font-bold leading-none text-black dark:text-white">Whois</h1>
+      <p class="text-left leading-none text-black dark:text-white">{{ $t('index.description') }}</p>
+      <div class="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
         <input
           v-model="userId"
           type="text"
           :placeholder="$t('index.input.placeholder')"
           data-form-type="other"
-          class="border-2 text-black dark:text-white bg-white dark:bg-black border-black dark:border-white rounded-md p-2 w-full focus:outline-none"
+          class="w-full rounded-md border-2 border-black bg-white p-2 text-black focus:outline-none dark:border-white dark:bg-black dark:text-white"
           @keyup.enter="openUser"
         />
         <button
           @click="openUser"
-          class="w-full sm:w-fit border-2 border-black bg-black text-white dark:text-black dark:bg-white dark:border-white rounded-md p-2 px-4 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition duration-150 ease-in-out"
+          class="w-full rounded-md border-2 border-black bg-black p-2 px-4 text-white transition duration-150 ease-in-out hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white sm:w-fit"
         >
           {{ $t('index.cta.search') }}
         </button>

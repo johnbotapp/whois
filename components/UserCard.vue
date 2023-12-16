@@ -2,18 +2,18 @@
   <img
     v-if="data.user.banner"
     :src="`https://cdn.discordapp.com/banners/${data.user.id}/${data.user.banner}?size=512`"
-    class="max-h-52 w-full relative -bottom-4 rounded-t-md object-cover object-center border-t-2 border-l-2 border-r-2 border-black dark:border-white"
+    class="relative -bottom-4 max-h-52 w-full rounded-t-md border-x-2 border-t-2 border-black object-cover object-center dark:border-white"
   />
   <div
-    class="flex sm:grid grid-cols-2 grid-rows-1 border-2 text-black dark:text-white bg-white dark:bg-black border-black dark:border-white p-3 px-5 w-full justify-between flex-col gap-3 sm:gap-0 sm:flex-row sm:h-36"
+    class="flex w-full grid-cols-2 grid-rows-1 flex-col justify-between gap-3 border-2 border-black bg-white p-3 px-5 text-black dark:border-white dark:bg-black dark:text-white sm:grid sm:h-36 sm:flex-row sm:gap-0"
     :class="data.user.banner ? 'rounded-b-md border-t-0' : 'rounded-md'"
   >
-    <div class="flex justify-start sm:justify-center gap-4 items-center w-full">
-      <div class="flex justify-center items-center">
+    <div class="flex w-full items-center justify-start gap-4 sm:justify-center">
+      <div class="flex items-center justify-center">
         <img
           v-if="data.user?.avatar_decoration_data?.asset"
           :src="`https://cdn.discordapp.com/avatar-decoration-presets/${data.user.avatar_decoration_data.asset}?size=128`"
-          class="max-w-[calc(80px*1.2)] max-h-[calc(80px*1.2)] absolute pointer-events-none"
+          class="pointer-events-none absolute max-h-[calc(80px*1.2)] max-w-[calc(80px*1.2)]"
         />
         <Preview
           :src="data.user.avatar ? `https://cdn.discordapp.com/avatars/${data.user.id}/${data.user.avatar}?size=128` : defaultAvatarURL(data.user)"
@@ -22,13 +22,13 @@
           :rounded="true"
         />
       </div>
-      <div class="flex flex-col justify-center gap-4 overflow-hidden w-full">
+      <div class="flex w-full flex-col justify-center gap-4 overflow-hidden">
         <div class="flex flex-col gap-0">
-          <div class="flex gap-2 items-center truncate">
+          <div class="flex items-center gap-2 truncate">
             <span class="truncate">{{ data.user.global_name ?? data.user.username }}</span>
             <span
               v-if="data.user.bot"
-              class="flex bg-[#5865f2] rounded-[3px] px-1 h-4 leading-none text-[11px] text-white uppercase aling-center items-center font-semibold tracking-wider"
+              class="flex h-4 items-center rounded-[3px] bg-[#5865f2] px-1 text-[11px] font-semibold uppercase leading-none tracking-wider text-white"
               :title="(data.user.verified_bot || data.user.system) ? flagsName[locale]['VerifiedBot'] : 'Bot'"
             >
               <svg
@@ -47,14 +47,14 @@
               <span v-if="data.user.system">{{ $t('user.system') }}</span>
             </span>
           </div>
-          <span class="opacity-75 truncate">
+          <span class="truncate opacity-75">
             {{ data.user.discriminator === '0' ? `@${data.user.username}` : `${data.user.username}#${data.user.discriminator}` }}
           </span>
         </div>
       </div>
     </div>
-    <div class="flex flex-col justify-between items-start sm:items-end gap-3 sm:gap-0 w-full">
-      <div class="flex flex-col items-start sm:items-end gap-2 sm:gap-0 leading-none sm:leading-6">
+    <div class="flex w-full flex-col items-start justify-between gap-3 sm:items-end sm:gap-0">
+      <div class="flex flex-col items-start gap-2 leading-none sm:items-end sm:gap-0 sm:leading-6">
         <div class="flex w-[max-content]">
           <span class="opacity-75">{{ $t('user.created') }}&nbsp;</span>
           <NuxtTime
@@ -65,7 +65,7 @@
             hour="numeric"
             minute="numeric"
             year="numeric"
-            class="text-black dark:text-white h-fit"
+            class="h-fit text-black dark:text-white"
           />
         </div>
         <div class="w-[max-content]">
@@ -73,11 +73,11 @@
           <span>{{ data.user.id }}</span>
         </div>
       </div>
-      <div class="flex gap-2 flex-wrap justify-start sm:justify-end sm:max-w-[250px]">
+      <div class="flex flex-wrap justify-start gap-2 sm:max-w-[250px] sm:justify-end">
         <div
           v-for="flag in data.user.user_flags"
           :key="flag"
-          class="relative group h-fit"
+          class="group relative h-fit"
           :title="flagsName[locale][flag]"
         >
           <img :src="`/img/icons/${flag}.svg`" class="h-5 max-w-[24px]" />

@@ -1,9 +1,9 @@
 <template>
-  <div class="flex justify-center items-center">
-    <div class="flex flex-col justify-center items-start gap-4 max-w-xl w-full p-4">
+  <div class="flex items-center justify-center">
+    <div class="flex w-full max-w-xl flex-col items-start justify-center gap-4 p-4">
       <div
         v-if="error"
-        class="flex flex-col border-2 text-red-500 border-red-500 rounded-md p-3 px-5 w-full justify-center h-28"
+        class="flex h-28 w-full flex-col justify-center rounded-md border-2 border-red-500 p-3 px-5 text-red-500"
       >
         <h1 class="text-xl font-semibold">{{ $t('user.error.title') }}</h1>
         <span>{{ $t('user.error.description') }}</span>
@@ -16,14 +16,14 @@
         v-if="!error && !data?.user"
       />
       <div
-        class="flex flex-col sm:flex-row gap-2 w-full"
+        class="flex w-full flex-col gap-2 sm:flex-row"
         v-if="!error && data?.user"
       >
         <a
           v-if="!error"
           :href="`https://discord.com/users/${userIdRoute}`"
           target="_blank"
-          class="border-2 bg-white dark:bg-black dark:border-white text-black dark:text-white border-black dark:border-whit hover:bg-black dark:hover:bg-white rounded-md p-2 w-full text-center hover:text-white dark:hover:text-black transition duration-150 ease-in-out"
+          class="w-full rounded-md border-2 border-black bg-white p-2 text-center text-black transition duration-150 ease-in-out hover:bg-black hover:text-white dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black"
         >
           {{ $t('user.cta.view') }}
         </a>
@@ -31,23 +31,23 @@
           v-if="!error && data?.user.bot && !data?.user.system"
           :href="`https://discord.com/oauth2/authorize?client_id=${data.user.id}&scope=applications.commands%20bot`"
           target="_blank"
-          class="border-2 bg-white dark:bg-black dark:border-white text-black dark:text-white border-black dark:border-whit hover:bg-black dark:hover:bg-white rounded-md p-2 w-full text-center hover:text-white dark:hover:text-black transition duration-150 ease-in-out"
+          class="w-full rounded-md border-2 border-black bg-white p-2 text-center text-black transition duration-150 ease-in-out hover:bg-black hover:text-white dark:border-white dark:bg-black dark:text-white dark:hover:bg-white dark:hover:text-black"
         >
           {{ $t('user.cta.invite') }}
         </a>
       </div>
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-2 w-full">
+      <div class="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
         <input
           v-model="userId"
           type="text"
           :placeholder="userIdRoute"
           data-form-type="other"
-          class="border-2 text-black dark:text-white bg-white dark:bg-black border-black dark:border-white rounded-md p-2 w-full focus:outline-none"
+          class="w-full rounded-md border-2 border-black bg-white p-2 text-black focus:outline-none dark:border-white dark:bg-black dark:text-white"
           @keyup.enter="openUser"
         />
         <button
           @click="openUser"
-          class="w-full sm:w-fit border-2 border-black bg-black text-white dark:text-black dark:bg-white dark:border-white rounded-md p-2 px-4 hover:bg-white hover:text-black dark:hover:bg-black dark:hover:text-white transition duration-150 ease-in-out"
+          class="w-full rounded-md border-2 border-black bg-black p-2 px-4 text-white transition duration-150 ease-in-out hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white sm:w-fit"
         >
           {{ $t('index.cta.search') }}
         </button>

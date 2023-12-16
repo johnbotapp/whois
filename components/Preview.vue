@@ -2,9 +2,9 @@
   <div>
     <LegoPreview
       :maxWidth="500"
-      class="transition-transform ease-in-out duration-500 outline-none"
+      class="outline-none transition-transform duration-500 ease-in-out"
     >
-      <LegoPreviewDialog class="fixed z-800 left-0 top-0 w-screen h-screen bg-white dark:bg-black bg-opacity-50 backdrop-blur-md" />
+      <LegoPreviewDialog class="fixed left-0 top-0 z-[800] h-screen w-screen bg-white/50 backdrop-blur-md dark:bg-black" />
       <img
         :class="{ 'rounded-full': rounded }"
         :style="`min-width: ${width}px; min-height: ${height}px;`"

@@ -7,19 +7,24 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore ."
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "@nuxtjs/i18n": "^8.0.0-rc.5",
     "autoprefixer": "^10.4.16",
-    "nuxt": "^3.8.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
+    "nuxt": "^3.8.2",
     "nuxt-lego": "^0.0.14",
-    "nuxt-simple-sitemap": "^3.4.0",
+    "nuxt-simple-sitemap": "^3.4.1",
     "nuxt-time": "^0.1.1",
     "postcss": "^8.4.31",
     "tailwindcss": "^3.3.3",
-    "vue": "^3.3.4",
+    "vue": "^3.3.12",
+    "vue-eslint-parser": "^9.3.2",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
@@ -28,6 +33,6 @@
     "h3": "^1.8.2",
     "lucide-vue-next": "^0.288.0",
     "node-cache": "^5.1.2",
-    "nuxt-simple-robots": "^3.1.6"
+    "nuxt-simple-robots": "^3.1.10"
   }
 }

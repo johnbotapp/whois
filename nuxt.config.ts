@@ -33,12 +33,6 @@ export default defineNuxtConfig({
       bot_token: process.env.NUXT_DISCORD_BOT_TOKEN,
     }
   },
-  robots: {
-    disallow: [
-      '/api/**',
-      '/user/**',
-    ],
-  },
   pages: true,
   colorMode: {
     classSuffix: '',
