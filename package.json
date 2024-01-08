@@ -31,7 +31,7 @@
     "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/tailwindcss": "^6.8.1",
     "h3": "^1.8.2",
-    "lucide-vue-next": "^0.288.0",
+    "lucide-vue-next": "^0.307.0",
     "node-cache": "^5.1.2",
     "nuxt-simple-robots": "^3.1.10"
   }
