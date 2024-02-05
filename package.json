@@ -17,7 +17,7 @@
     "autoprefixer": "^10.4.17",
     "eslint": "^8.56.0",
     "eslint-plugin-tailwindcss": "^3.14.1",
-    "nuxt": "^3.9.3",
+    "nuxt": "^3.10.0",
     "nuxt-lego": "^0.0.14",
     "nuxt-simple-sitemap": "^4.4.1",
     "nuxt-time": "^0.1.1",
