@@ -27,6 +27,7 @@ export default defineNuxtConfig({
       'fr'
     ],
     defaultLocale: 'en',
+    strategy: 'prefix',
   },
   runtimeConfig: {
     discord: {
