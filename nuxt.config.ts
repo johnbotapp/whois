@@ -28,6 +28,11 @@ export default defineNuxtConfig({
     ],
     defaultLocale: 'en',
     strategy: 'prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root'
+    },
   },
   runtimeConfig: {
     discord: {
