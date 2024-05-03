@@ -61,7 +61,7 @@ export default defineNuxtConfig({
         content: 'width=device-width, initial-scale=1',
       }, {
         name: 'description',
-        content: 'Get informations about a Discord user just by their ID!',
+        content: 'Get information about a Discord user just by their ID!',
       }, {
         name: 'og:site_name',
         content: 'Whois / John-Bot'
@@ -76,7 +76,7 @@ export default defineNuxtConfig({
         content: 'Whois / John-Bot'
       }, {
         name: 'twitter:description',
-        content: 'Get informations about a Discord user just by their ID!'
+        content: 'Get information about a Discord user just by their ID!'
       }, {
         name: 'theme-color',
         content: '#2b2d31'
