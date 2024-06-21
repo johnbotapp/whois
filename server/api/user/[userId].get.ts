@@ -24,12 +24,12 @@ interface DiscordUser {
   user_flags?: string[];
   verified_bot?: boolean;
   guild_count?: number;
-}
+};
 
 interface ErrorResponse {
   code: number;
   message: string;
-}
+};
 
 const flags: Record<number, string> = {
   1: "DiscordStaff",
