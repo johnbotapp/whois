@@ -2,7 +2,7 @@
   <div class="flex h-36 w-full flex-col justify-center gap-3 rounded-md border-2 border-black bg-white p-3 px-5 text-black dark:border-white dark:bg-black dark:text-white">
     <div class="flex w-full items-center justify-center gap-4">
       <div class="flex items-center justify-center">
-        <div class="pointer-events-none h-[80px] w-[80px] animate-pulse rounded-full bg-zinc-300 dark:bg-zinc-700"></div>
+        <div class="pointer-events-none size-[80px] animate-pulse rounded-full bg-zinc-300 dark:bg-zinc-700"></div>
       </div>
       <div class="flex w-full flex-col justify-center gap-4 overflow-hidden">
         <div class="flex flex-col gap-2">

@@ -55,7 +55,7 @@
     </div>
     <div class="flex w-full flex-col items-start justify-between gap-3 sm:items-end sm:gap-0">
       <div class="flex flex-col items-start gap-2 leading-none sm:items-end sm:gap-0 sm:leading-6">
-        <div class="flex w-[max-content]">
+        <div class="flex w-max">
           <span class="opacity-75">{{ $t('user.created') }}&nbsp;</span>
           <NuxtTime
             :datetime="getTimestamp(data.user.id)"
@@ -68,7 +68,7 @@
             class="h-fit text-black dark:text-white"
           />
         </div>
-        <div class="w-[max-content]">
+        <div class="w-max">
           <span class="opacity-75">{{ $t('user.id') }}&nbsp;</span>
           <span>{{ data.user.id }}</span>
         </div>

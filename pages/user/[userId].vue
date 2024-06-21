@@ -1,6 +1,6 @@
 <template>
   <div class="flex items-center justify-center">
-    <div class="flex w-full max-w-xl flex-col items-start justify-center gap-4 p-4">
+    <div class="flex w-full max-w-xl flex-col items-start justify-center gap-2.5 p-4">
       <div
         v-if="error"
         class="flex h-28 w-full flex-col justify-center rounded-md border-2 border-red-500 p-3 px-5 text-red-500"
@@ -36,7 +36,7 @@
           {{ $t('user.cta.invite') }}
         </a>
       </div>
-      <div class="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
+      <div class="flex w-full flex-col items-center justify-center gap-2.5 sm:flex-row">
         <input
           v-model="userId"
           type="text"

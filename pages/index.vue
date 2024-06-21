@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full w-full items-center justify-center">
+  <div class="flex size-full items-center justify-center">
     <div class="flex w-full max-w-xl flex-col items-start justify-center gap-4 p-4">
       <h1 class="text-center text-4xl font-bold leading-none text-black dark:text-white">Whois</h1>
       <p class="text-left leading-none text-black dark:text-white">{{ $t('index.description') }}</p>

@@ -8,7 +8,7 @@
       >
         {{ $t('footer.source') }}
       </a>
-      <div class="h-1 w-1 rounded-full bg-black dark:bg-white"></div>
+      <div class="size-1 rounded-full bg-black dark:bg-white"></div>
       <span>
         {{ $t('footer.madeWith') }} <a 
           href="https://en.wikipedia.org/wiki/Heart"
@@ -24,7 +24,7 @@
           johnbot.app
         </a>
       </span>
-      <div class="h-1 w-1 rounded-full bg-black dark:bg-white"></div>
+      <div class="size-1 rounded-full bg-black dark:bg-white"></div>
       {{ $t('footer.disclaimer') }}
     </footer>
   </div>
