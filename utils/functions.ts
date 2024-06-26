@@ -13,4 +13,8 @@ export function transitionManager() {
   const enable = () => document.head.removeChild(style);
   const disable = () => document.head.appendChild(style);
   return { enable, disable };
-}
+};
+
+export function getTimestamp(snowflake: number) {
+  return (snowflake / 4194304) + 1420070400000;
+};

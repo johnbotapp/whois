@@ -29,7 +29,7 @@
             <span
               v-if="data.user.bot"
               class="flex h-4 items-center rounded-[3px] bg-[#5865f2] px-1 text-[11px] font-semibold uppercase leading-none tracking-wider text-white"
-              :title="(data.user.verified_bot || data.user.system) ? flagsName[locale]['VerifiedBot'] : 'Bot'"
+              :title="(data.user.verified_bot || data.user.system) ? flagNames[locale]['VerifiedBot'] : 'Bot'"
             >
               <svg
                 v-if="data.user.verified_bot || data.user.system"
@@ -43,7 +43,7 @@
                   fill="currentColor"
                 />
               </svg>
-              <span v-if="data.user.bot && !data.user.system">Bot</span>
+              <span v-if="data.user.bot && !data.user.system">App</span>
               <span v-if="data.user.system">{{ $t('user.system') }}</span>
             </span>
           </div>
@@ -78,7 +78,7 @@
           v-for="flag in data.user.user_flags"
           :key="flag"
           class="group relative h-fit"
-          :title="flagsName[locale][flag]"
+          :title="flagNames[locale][flag]"
         >
           <img :src="`/img/icons/${flag}.svg`" class="h-5 max-w-[24px]" />
         </div>
@@ -88,21 +88,23 @@
 </template>
 
 <script setup>
-  const { locale } = useI18n();
-  import flagsName from '~/utils/flagsName.json';
+  import flagNames from '~/utils/flagNames.json';
+  import {
+    getTimestamp
+  } from '@/utils/functions';
 
   defineProps({
     data: {
       type: Object,
       required: true
-    },
+    }
   });
 
-  const getTimestamp = function(snowflake) {
-    return snowflake / 4194304 + 1420070400000;
-  }
+  const {
+    locale
+  } = useI18n();
 
-  const defaultAvatarURL = function(user) {
+  function defaultAvatarURL(user) {
     const index = parseInt(user.discriminator === '0' ? user.id / 1000 : user.discriminator) % 5;
     return `https://cdn.discordapp.com/embed/avatars/${index}.png`;
   }

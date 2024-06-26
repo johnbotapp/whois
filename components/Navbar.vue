@@ -30,8 +30,10 @@
 </template>
 
 <script setup>
-  const { locale } = useI18n();
   const switchLocalePath = useSwitchLocalePath();
   const localePath = useLocalePath();
+  const {
+    locale
+  } = useI18n();
 
 </script>

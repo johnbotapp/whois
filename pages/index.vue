@@ -24,10 +24,11 @@
 </template>
 
 <script setup>
-  const userId = ref('');
   const localePath = useLocalePath();
 
-  const openUser = function() {
+  const userId = ref('');
+
+  function openUser() {
     if (!userId.value) return;
     return navigateTo(localePath(`/user/${userId.value.toLowerCase()}`));
   };

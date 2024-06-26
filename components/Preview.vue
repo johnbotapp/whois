@@ -38,7 +38,7 @@
     rounded: {
       type: Boolean,
       default: true,
-    },
-  })
+    }
+  });
 
 </script>
