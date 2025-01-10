@@ -36,7 +36,7 @@
           {{ $t('user.cta.invite') }}
         </a>
       </div>
-      <div class="flex w-full flex-col items-center justify-center gap-2.5 sm:flex-row">
+      <div class="flex w-full flex-col items-center justify-center gap-2 sm:flex-row">
         <input
           v-model="userId"
           type="text"
@@ -81,10 +81,9 @@
     return navigateTo(localePath(`/user/${userId.value.toLowerCase()}`));
   };
 
-  const route = useRoute();
-  const userIdRoute = ref(route.params.userId);
-
-  const userId = ref('');
+  const route = useRoute(),
+    userIdRoute = ref(route.params.userId),
+    userId = ref('');
 
   const {
     data,
@@ -92,30 +91,27 @@
   } = await useFetch(`/api/user/${route.params.userId}`, {
     lazy: true,
   });
-  
-  const user = computed(() => {
-    return data?.value?.user;
-  });
-  if (user) {
-    const username = user.discriminator === "0" ? `@${user.username}` : `${user.username}#${user.discriminator}`,
-      createdAt = new Date(getTimestamp(user.id)).toLocaleString('en-US', {
-        timeZone: 'UTC'
-      });
+
+  const user = computed(() => data?.value?.user);
+
+  if (user?.value) {
+    const username = user.value.discriminator === "0" ? `@${user.value.username}` : `${user.value.username}#${user.value.discriminator}`,
+      createdAt = new Date(getTimestamp(user.value.id)).toLocaleString('en-US', { timeZone: 'UTC' });
 
     useSeoMeta({
       title: `Whois / John-Bot - ${username}`,
-      description: `Username: ${user.username}`
-        + `\nID: ${user.id}`
+      description: `Username: ${user.value.username}`
+        + `\nID: ${user.value.id}`
         + `\nCreated at: ${createdAt} (UTC)`
-        + `\nThis user is ${user.bot ? '' : 'not'} a bot`,
+        + `\nThis user is ${user.value.bot ? '' : 'not'} a bot`,
       twitterTitle: `Whois / John-Bot - ${username}`,
-      twitterImage: user.avatar ? `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}` : defaultAvatarURL(user),
+      twitterImage: user.value.avatar ? `https://cdn.discordapp.com/avatars/${user.value.id}/${user.value.avatar}` : defaultAvatarURL(user),
       twitterCard: "summary",
-      twitterDescription:  `Username: ${user.username}`
-        + `\nID: ${user.id}`
+      twitterDescription:  `Username: ${user.value.username}`
+        + `\nID: ${user.value.id}`
         + `\nCreated at: ${createdAt} (UTC)`
-        + `\nThis user is ${user.bot ? '' : 'not'} a bot`,
-      themeColor: user.banner_color ?? '#2b2d31'
+        + `\nThis user is ${user.value.bot ? '' : 'not'} a bot`,
+      themeColor: user.value.banner_color ?? '#2b2d31'
     });
   }
 

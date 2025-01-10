@@ -2,7 +2,7 @@
   <img
     v-if="data.user.banner"
     :src="`https://cdn.discordapp.com/banners/${data.user.id}/${data.user.banner}?size=512`"
-    class="relative -bottom-4 max-h-52 w-full rounded-t-md border-x-2 border-t-2 border-black object-cover object-center dark:border-white"
+    class="relative -bottom-4 h-48 max-h-48 w-full rounded-t-md border-x-2 border-t-2 border-black object-cover object-center dark:border-white"
   />
   <div
     class="flex w-full grid-cols-2 grid-rows-1 flex-col justify-between gap-3 border-2 border-black bg-white p-3 px-5 text-black dark:border-white dark:bg-black dark:text-white sm:grid sm:h-36 sm:flex-row sm:gap-0"

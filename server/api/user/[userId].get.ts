@@ -1,4 +1,6 @@
-import type { H3Event } from 'h3';
+import type {
+  H3Event
+} from 'h3';
 import NodeCache from 'node-cache';
 
 const cache = new NodeCache({
@@ -48,8 +50,8 @@ const flags: Record<number, string> = {
 };
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig(event);
-  const userId = getRouterParam(event as H3Event, 'userId');
+  const config = useRuntimeConfig(event),
+    userId = getRouterParam(event as H3Event, 'userId');
   if (!userId) {
     throw createError({
       message: 'userId is required'

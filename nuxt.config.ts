@@ -16,10 +16,10 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/color-mode',
-    'nuxt-time',
-    'nuxt-simple-robots',
-    'nuxt-simple-sitemap',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
     '@nuxtjs/i18n',
+    'nuxt-time',
   ],
   i18n: {
     locales: [
@@ -87,4 +87,5 @@ export default defineNuxtConfig({
       }]
     }
   },
-})
+  compatibilityDate: '2025-01-09'
+});
